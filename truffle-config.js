@@ -8,18 +8,31 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: "*",
+      gasLimit: 10000000,
+      gas: 10000000,
     },
-    matic: {
-      provider: () =>
-        new HDWalletProvider(
-          mnemonic,
-          `https://matic-mumbai.chainstacklabs.com`
-        ),
-      network_id: 80001,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 80001,
+    // matic: {
+    //   provider: () =>
+    //     new HDWalletProvider(
+    //       mnemonic,
+    //       `https://matic-mumbai.chainstacklabs.com`
+    //     ),
+    //   network_id: 80001,
+    //   confirmations: 2,
+    //   timeoutBlocks: 200,
+    //   skipDryRun: true,
+    //   chainId: 80001,
+    // },
+    // sepolia
+
+    sepolia: {
+      provider: new HDWalletProvider(
+        mnemonic,
+        "https://eth-sepolia.g.alchemy.com/v2/klODvcjL6ZzA-6aPRIvNNLoPB20xmv-P"
+      ),
+      network_id: 11155111,
+      gasPrice: 24926022802,
+      // websockets: true,
     },
   },
   contracts_directory: "./contracts",
@@ -28,8 +41,8 @@ module.exports = {
     solc: {
       version: "^0.8.6",
       optimizer: {
-        enabled: true,
-        runs: 200,
+        // enabled: true,
+        // runs: 200,
       },
     },
   },

@@ -1,4 +1,4 @@
-import Plotly from "plotly.js-dist-min";
+// import Plotly from "plotly.js-dist-min";
 import React, { useEffect } from "react";
 import Web3 from "web3";
 import { useData } from "../../contexts/DataContext";
@@ -59,7 +59,7 @@ const ChartContainer: React.FC<Props> = ({ questionId }) => {
       title: "YES / NO Graph",
     };
 
-    Plotly.newPlot("myDiv", chartData, layout, { displayModeBar: false });
+    // Plotly.newPlot("myDiv", chartData, layout, { displayModeBar: false });
   };
 
   useEffect(() => {
